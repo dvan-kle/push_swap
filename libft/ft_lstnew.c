@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   ft_lstnew.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
+/*   By: dvan-kle <dvan-kle@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/20 21:03:49 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/02/15 16:08:37 by danielvankl   ########   odam.nl         */
+/*   Created: 2022/10/17 17:19:23 by dvan-kle      #+#    #+#                 */
+/*   Updated: 2023/02/15 16:45:13 by danielvankl   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include "libft/libft.h"
+t_list	*ft_lstnew(int content)
+{
+	t_list	*list;
 
-
-
-#endif
+	list = (t_list *)malloc(sizeof(*list));
+	if (!list)
+		return (NULL);
+	list -> content = content;
+	list -> next = NULL;
+	return (list);
+}

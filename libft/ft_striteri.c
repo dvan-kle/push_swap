@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   ft_striteri.c                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
+/*   By: dvan-kle <dvan-kle@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/20 21:03:49 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/02/15 16:08:37 by danielvankl   ########   odam.nl         */
+/*   Created: 2022/10/13 15:10:04 by dvan-kle      #+#    #+#                 */
+/*   Updated: 2022/10/13 15:11:37 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+void	ft_striteri(char *str, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
 
-# include <stdlib.h>
-# include "libft/libft.h"
-
-
-
-#endif
+	i = 0;
+	while (str[i])
+	{
+		f(i, &str[i]);
+		i++;
+	}
+}

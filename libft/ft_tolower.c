@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   ft_tolower.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
+/*   By: dvan-kle <dvan-kle@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/20 21:03:49 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/02/15 16:08:37 by danielvankl   ########   odam.nl         */
+/*   Created: 2022/10/03 14:52:36 by dvan-kle      #+#    #+#                 */
+/*   Updated: 2022/10/06 11:19:07 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <stdlib.h>
-# include "libft/libft.h"
-
-
-
-#endif
+int	ft_tolower(int c)
+{
+	if (c >= 65 && c <= 90)
+			c += 32;
+	return (c);
+}

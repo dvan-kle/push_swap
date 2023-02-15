@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   ft_strchr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
+/*   By: dvan-kle <dvan-kle@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/20 21:03:49 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/02/15 16:08:37 by danielvankl   ########   odam.nl         */
+/*   Created: 2022/10/03 15:01:56 by dvan-kle      #+#    #+#                 */
+/*   Updated: 2022/10/18 22:24:43 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include "libft/libft.h"
+char	*ft_strchr(const char *str, int c)
+{
+	int		i;
+	char	*ptr;
 
-
-
-#endif
+	i = 0;
+	ptr = (char *)str;
+	while (ptr[i] != (char)c)
+	{
+		if (ptr[i] == 0)
+			return (NULL);
+		i++;
+	}
+	return (&ptr[i]);
+}

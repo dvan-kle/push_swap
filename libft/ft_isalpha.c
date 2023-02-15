@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   ft_isalpha.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
+/*   By: dvan-kle <dvan-kle@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/20 21:03:49 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/02/15 16:08:37 by danielvankl   ########   odam.nl         */
+/*   Created: 2022/08/18 15:09:55 by dvan-kle      #+#    #+#                 */
+/*   Updated: 2022/10/18 22:22:35 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <stdlib.h>
-# include "libft/libft.h"
-
-
-
-#endif
+int	ft_isalpha(int c)
+{
+	if (!((c > 64 && c < 91) || (c > 96 && c < 123)))
+	{
+		return (0);
+	}
+	return (1);
+}
