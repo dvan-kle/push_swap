@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 17:30:11 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/02/15 17:30:21 by danielvankl   ########   odam.nl         */
+/*   Updated: 2023/02/15 17:39:39 by danielvankl   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,11 @@ void simple_sort(t_list **stack_a, t_list **stack_b)
 		sort4(stack_a, stack_b);
 	else if (lstsize == 5)
 		sort5(stack_a, stack_b);
+}
+
+void sort2(t_list **stack_a, t_list **stack_b)
+{
+    if (!sorted_check(stack_a))
+        ft_swap(stack_a);
+    sorted_check(stack_a);
 }
