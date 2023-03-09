@@ -6,20 +6,15 @@
 /*   By: dvan-kle <dvan-kle@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/18 15:09:55 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/02/15 16:40:29 by danielvankl   ########   odam.nl         */
+/*   Updated: 2023/02/27 16:39:14 by danielvankl   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	int	i;
-
-	i = 0;
-	while(str[i])
+	if (!(c >= 48 && c <= 57))
 	{
-		if (!(str[i] >= 48 && str[i] <= 57))
-			return (0);
-		i++;
+		return (0);
 	}
 	return (1);
 }
