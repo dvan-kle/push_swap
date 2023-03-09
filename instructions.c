@@ -6,16 +6,16 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/24 15:31:50 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/01/27 16:55:19 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/02/27 15:54:52 by danielvankl   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Swap the first 2 elements at the top of stack a.
-void sa(stack **stack_a)
+void swap(stack **stack)
 {
-    stack *temp;
+    s
 }
 
 // Swap the first 2 elements at the top of stack b.
