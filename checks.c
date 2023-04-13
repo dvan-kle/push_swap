@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 16:55:02 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/02/27 16:51:10 by danielvankl   ########   odam.nl         */
+/*   Updated: 2023/04/13 13:18:20 by danielvankl   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,4 @@ void check_input(int argc, char **argv)
 		i++;
 	}
 	printf("INPUT OK\n");
-}
-
-int main(int ac, char **av)
-{
-	check_input(ac, av);
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/20 21:03:49 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/02/27 16:52:41 by danielvankl   ########   odam.nl         */
+/*   Updated: 2023/04/13 13:18:31 by danielvankl   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 
 
 void	error_return(char *str);
+void    check_input(int argc, char **argv);
 
 #endif
