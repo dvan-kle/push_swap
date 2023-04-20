@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/04/20 21:52:23 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/20 22:56:18 by dvan-kle      ########   odam.nl         */
+/*   Created: 2023/04/20 23:26:14 by dvan-kle      #+#    #+#                 */
+/*   Updated: 2023/04/21 01:41:41 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,34 @@ t_list	*ft_lstnew(int content)
 
 t_list	*ft_lstlast(t_list *stack)
 {
-	if (!stack)
-		return (NULL);
-	while (stack && stack->next != NULL)
-		stack = stack->next;
-	return (stack);
+	t_list	*tmp;
+
+	tmp = stack;
+	while (tmp)
+		tmp = tmp->next;
+	return (tmp);
+}
+
+void	printlist(t_list *stack)
+{
+	t_list	*tmp;
+
+	tmp = stack;
+	while (tmp != NULL)
+	{
+		ft_putnbr_fd(tmp->content, 1);
+		ft_putendl_fd("", 1);
+		tmp = tmp->next;
+	}
 }
 
 void	ft_lstadd_back(t_list **stack, t_list *new)
 {
-	t_list *tmp;
+	t_list	*lst;
 
-	tmp = *stack;
-	while(tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
+	lst = ft_lstlast(*stack);
+	if (!lst)
+		*stack = new;
+	else
+		lst->next = new;
 }

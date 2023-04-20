@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 16:55:02 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/20 22:14:04 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/20 23:35:53 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ static int check_digits(char *str)
     int i;
     
     i = 0;
+	if ((str[0] == '-' && str[1] == '\0') || str[0] == '+')
+		return (0);
 	if (str[0] == '-')
 		i++;
-	while (str[i] == '0')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);

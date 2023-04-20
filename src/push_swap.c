@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 16:00:52 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/04/20 22:52:28 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/21 00:43:49 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,20 @@ void stackinit(t_list **stack, int argc, char **argv)
 		ft_lstadd_back(stack, new_node);
 		i++;
 	}
-	printf("INIT OK\n");
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_list **stack_a;
-	t_list *stack_b;
+	t_list	**stack_a;
+	t_list	**stack_b;
 
-	
 	check_input(argc, argv);
 	stack_a = (t_list **)malloc(sizeof(t_list **));
-	stack_b = (t_list *)malloc(sizeof(t_list *));
+	stack_b = (t_list **)malloc(sizeof(t_list **));
+	*stack_a = NULL;
+	*stack_b = NULL;
 	stackinit(stack_a, argc, argv);
-	stack_b = NULL;
+	printlist(*stack_a);
 	// if (ft_lstsize(*stack_a) < 6)
 	// 	simple_sort(stack_a, stack_b);
 	// else
