@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 16:00:52 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/04/20 22:32:58 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/20 22:52:28 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void stackinit(t_list **stack, int argc, char **argv)
 	}
 	while (args[i])
 	{
-		new_node = ft_lstnew(ft_atoi(argv[i]));
+		new_node = ft_lstnew(ft_atoi(args[i]));
 		ft_lstadd_back(stack, new_node);
 		i++;
 	}

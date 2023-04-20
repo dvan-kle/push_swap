@@ -6,20 +6,20 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/20 21:52:23 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/20 22:28:25 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/20 22:56:18 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
-t_list	*ft_lstnew(int value)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*new;
 
-	new = (t_list *) malloc(sizeof(t_list *));
+	new = (t_list *)malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
-	new->content = value;
+	new->content = content;
 	new->next = NULL;
 	return (new);
 }
