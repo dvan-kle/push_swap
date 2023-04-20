@@ -5,42 +5,35 @@
 #                                                      +:+                     #
 #    By: dvan-kle <dvan-kle@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2023/01/25 18:18:43 by dvan-kle      #+#    #+#                  #
-#    Updated: 2023/01/25 18:21:04 by dvan-kle      ########   odam.nl          #
+#    Created: 2023/04/20 22:07:37 by dvan-kle      #+#    #+#                  #
+#    Updated: 2023/04/20 22:12:20 by dvan-kle      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-C=gcc
+NAME = push_swap
 
-NAME=push_swap
+LIBFT = libft/libft.a
 
-CFLAGS=-Wall -Werror -Wextra
+CC = gcc
+CC_FLAGS = -Wall -Wextra -Werror
 
-SRC=	ft_printf.c \
-		ft_printf_utils.c \
-		ft_hexa.c 
+SRC = src/push_swap.c src/checks.c src/list.c
 
-OBJ=	$(SRC:.c=.o)
+OBJ = ${SRCS:.c=.o}
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	make -C libftprintf
-	cp libftprintf/libftprintf.a
-	gcc libftprintf.a $(OBJ) -o $(NAME) 
+$(NAME):
+	$(MAKE) all -C libft
+	$(CC) $(CC_FLAGS) $(SRC) $(LIBFT) -g -fsanitize=address -o $(NAME)
 
-$(OBJ): $(SRC)
-	$(C) $(CFLAGS) -c $(SRC)
 
 clean:
-	rm -f $(OBJ)
-	rm -f libft/*.o
+	rm -rf $(OBJ)
+	$(MAKE) clean -C libft
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f libft/libft.a
-	rm -f libftprintf/libftprintf.a
+	$(MAKE) fclean -C libft
 
-re: fclean all	
-
-.PHONY: clean fclean all re
+re: fclean all
