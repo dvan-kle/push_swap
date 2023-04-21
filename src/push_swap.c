@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 16:00:52 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/04/21 03:02:23 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/21 18:18:01 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,16 @@ int	main(int argc, char **argv)
 	t_list	**stack_b;
 
 	check_input(argc, argv);
-	stack_a = (t_list **)malloc(sizeof(t_list **));
-	stack_b = (t_list **)malloc(sizeof(t_list **));
+	stack_a = (t_list **)malloc(sizeof(t_list));
+	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
 	stackinit(stack_a, argc, argv);
+	printlist(*stack_a);
+	// sa(stack_a);
+	ra(stack_a);
+	ra(stack_a);
+	ra(stack_a);
 	printlist(*stack_a);
 	// if (ft_lstsize(*stack_a) < 6)
 	// 	simple_sort(stack_a, stack_b);

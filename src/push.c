@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/21 02:56:49 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/21 03:02:04 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/21 16:56:49 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	push(t_list **from_stack, t_list **to_stack)
 		tmp->next = top_to;
 		*to_stack = tmp;
 	}
+	return (0);
 }
 
 // Take the first element at the top of a and put it at the top of b.

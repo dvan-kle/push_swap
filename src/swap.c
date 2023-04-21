@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/21 02:48:19 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/21 03:03:25 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/21 16:56:33 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	swap(t_list **stack)
 	tmp = top->content;
 	top->content = next->content;
 	next->content = tmp;
+	return (0);
 }
 
 // Swap the first 2 elements at the top of stack a.
