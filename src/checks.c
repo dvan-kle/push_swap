@@ -6,17 +6,17 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 16:55:02 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/20 23:35:53 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/21 03:01:54 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
-static int check_digits(char *str)
+static int	check_digits(char *str)
 {
-    int i;
-    
-    i = 0;
+	int	i;
+
+	i = 0;
 	if ((str[0] == '-' && str[1] == '\0') || str[0] == '+')
 		return (0);
 	if (str[0] == '-')
@@ -33,7 +33,7 @@ static int check_digits(char *str)
 static int	check_doubles(char **args, int nb, int i)
 {
 	i++;
-	while(args[i])
+	while (args[i])
 	{
 		if (nb == ft_atoi(args[i]))
 			return (0);
@@ -42,12 +42,12 @@ static int	check_doubles(char **args, int nb, int i)
 	return (1);
 }
 
-
-void check_input(int argc, char **argv)
+void	check_input(int argc, char **argv)
 {
 	char	**args;
 	int		i;
-	
+	int		temp;
+
 	if (argc == 2)
 	{
 		args = ft_split(argv[1], 32);
@@ -60,8 +60,6 @@ void check_input(int argc, char **argv)
 	}
 	while (args[i])
 	{
-		int temp;
-
 		temp = ft_atoi(args[i]);
 		if (!check_digits(args[i]))
 			error_return("Invalid input\n");

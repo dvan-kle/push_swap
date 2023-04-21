@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 16:00:52 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/04/21 00:43:49 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/21 03:02:23 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	error_return(char *str)
 	exit(-1);
 }
 
-void stackinit(t_list **stack, int argc, char **argv)
+void	stackinit(t_list **stack, int argc, char **argv)
 {
-    t_list	*new_node;
+	t_list	*new_node;
 	char	**args;
 	int		i;
 

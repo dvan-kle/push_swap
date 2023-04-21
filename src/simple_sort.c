@@ -6,13 +6,13 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 17:30:11 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/04/20 22:14:19 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/21 03:03:16 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
-void simple_sort(t_list **stack_a, t_list **stack_b)
+void	simple_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	lstsize;
 
@@ -29,9 +29,9 @@ void simple_sort(t_list **stack_a, t_list **stack_b)
 		sort5(stack_a, stack_b);
 }
 
-void sort2(t_list **stack_a, t_list **stack_b)
+void	sort2(t_list **stack_a, t_list **stack_b)
 {
-    if (!sorted_check(stack_a))
-        ft_swap(stack_a);
-    sorted_check(stack_a);
+	if (!sorted_check(stack_a))
+		ft_swap(stack_a);
+	sorted_check(stack_a);
 }
