@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 16:55:02 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/21 03:01:54 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/04/21 18:43:12 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,18 @@ void	check_input(int argc, char **argv)
 			error_return("Invalid input\n");
 		i++;
 	}
-	printf("INPUT OK\n");
+}
+
+int	sorted_check(t_list *stack)
+{
+	t_list	*tmp;
+
+	tmp = stack;
+	while (tmp && tmp->next)
+	{
+		if (tmp->content > tmp->next->content)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }
