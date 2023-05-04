@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 17:20:33 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/05/04 17:33:02 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/04 18:20:55 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	radix_sort(t_list **head)
 	i = 0;
 	while (i < max_digits)
 	{
-		*output = NULL;
+		output = NULL;
 		count[2] = {0, 0};
-		*tmp = *head;
+		tmp = *head;
 		while (tmp != NULL)
 		{
 			bit = (tmp->content >> i) & 1;
@@ -66,10 +66,10 @@ void	radix_sort(t_list **head)
 		index[2] = {0, count[0]};
 		index[1] = index[0] + count[0];
 		tmp = *head;
-		while (tmp != NULL) 
+		while (tmp != NULL)
 		{
 			bit = (tmp->content >> i) & 1;
-			*next = tmp->next;
+			next = tmp->next;
 			if (bit == 0)
 			{
 				tmp->next = output;
