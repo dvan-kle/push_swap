@@ -6,11 +6,46 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 16:00:52 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/04/21 18:41:22 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/17 20:13:36 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
+
+void	assign_indices(t_list *stack)
+{
+	t_list	*current;
+	t_list	*seeker;
+	int		index;
+	int		min_value;
+	int		found;
+
+	current = stack;
+	index = 0;
+	while (current)
+	{
+		current->index = -1;
+		current = current->next;
+	}
+	while (index < ft_lstsize(stack))
+	{
+		min_value = 2147483647;
+		current = stack;
+		found = 0;
+		while (current)
+		{
+			if (current->index == -1 && current->content <= min_value)
+			{
+				min_value = current->content;
+				seeker = current;
+				found = 1;
+			}
+			current = current->next;
+		}
+		if (found)
+			seeker->index = index++;
+	}
+}
 
 void	error_return(char *str)
 {
@@ -53,8 +88,11 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	*stack_b = NULL;
 	stackinit(stack_a, argc, argv);
-	if (ft_lstsize(*stack_a) < 6)
+	assign_indices(*stack_a);
+	if (ft_lstsize(*stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
-	// else
-	// 	radix_sort(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
 }

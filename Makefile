@@ -6,7 +6,7 @@
 #    By: dvan-kle <dvan-kle@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/04/20 22:07:37 by dvan-kle      #+#    #+#                  #
-#    Updated: 2023/04/21 18:39:26 by dvan-kle      ########   odam.nl          #
+#    Updated: 2023/05/17 20:03:59 by dvan-kle      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LIBFT = libft/libft.a
 CC = gcc
 CC_FLAGS = -Wall -Wextra -Werror
 
-SRC = src/push_swap.c src/checks.c src/list.c src/swap.c src/push.c src/rotate.c src/reverse_rotate.c src/simple_sort.c
+SRC = src/push_swap.c src/checks.c src/list.c src/swap.c src/push.c src/rotate.c src/reverse_rotate.c src/simple_sort.c src/radix.c
 
 OBJ = ${SRCS:.c=.o}
 
