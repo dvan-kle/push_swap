@@ -6,11 +6,30 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 16:00:52 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/05/20 19:38:02 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/20 20:30:53 by danielvankl   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
+
+void	free_stack(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*pos;
+	t_list	*i;
+
+	if (!stack_a || !(*stack_a))
+		return ;
+	pos = (*stack_a);
+	while (pos)
+	{
+		i = pos->next;
+		free(pos);
+		pos = i;
+	}
+	*stack_a = NULL;
+	free(stack_a);
+	free(stack_b);
+}
 
 void	assign_indices(t_list *stack)
 {
@@ -44,7 +63,7 @@ void	assign_indices(t_list *stack)
 void	error_return(char *str)
 {
 	ft_putstr_fd(str, 1);
-	exit(-1);
+	exit(EXIT_FAILURE);
 }
 
 void	stackinit(t_list **stack, int argc, char **argv)
@@ -88,6 +107,5 @@ int	main(int argc, char **argv)
 		simple_sort(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
-	if (sorted_check(*stack_a))
-		exit (EXIT_SUCCESS);
+	free_stack(stack_a, stack_b);
 }

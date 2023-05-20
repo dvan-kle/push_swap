@@ -6,7 +6,7 @@
 #    By: dvan-kle <dvan-kle@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/04/20 22:07:37 by dvan-kle      #+#    #+#                  #
-#    Updated: 2023/05/20 18:39:27 by dvan-kle      ########   odam.nl          #
+#    Updated: 2023/05/20 20:28:08 by danielvankl   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 
 $(NAME):
 	$(MAKE) all -C libft
-	$(CC) -g -fno-inline $(CC_FLAGS) $(SRC) $(LIBFT) -o $(NAME)
+	$(CC) -g $(CC_FLAGS) $(SRC) $(LIBFT) -o $(NAME)
 
 
 clean:
