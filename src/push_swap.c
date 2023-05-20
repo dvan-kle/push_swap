@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 16:00:52 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/05/17 20:13:36 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/20 19:38:02 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,21 @@ void	assign_indices(t_list *stack)
 	t_list	*seeker;
 	int		index;
 	int		min_value;
-	int		found;
+	bool	found;
 
-	current = stack;
 	index = 0;
-	while (current)
-	{
-		current->index = -1;
-		current = current->next;
-	}
 	while (index < ft_lstsize(stack))
 	{
-		min_value = 2147483647;
+		min_value = INT_MAX;
 		current = stack;
-		found = 0;
+		found = false;
 		while (current)
 		{
 			if (current->index == -1 && current->content <= min_value)
 			{
 				min_value = current->content;
 				seeker = current;
-				found = 1;
+				found = true;
 			}
 			current = current->next;
 		}
@@ -72,6 +66,7 @@ void	stackinit(t_list **stack, int argc, char **argv)
 	while (args[i])
 	{
 		new_node = ft_lstnew(ft_atoi(args[i]));
+		new_node->index = -1;
 		ft_lstadd_back(stack, new_node);
 		i++;
 	}
@@ -93,6 +88,6 @@ int	main(int argc, char **argv)
 		simple_sort(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
-	ft_lstclear(stack_a);
-	ft_lstclear(stack_b);
+	if (sorted_check(*stack_a))
+		exit (EXIT_SUCCESS);
 }

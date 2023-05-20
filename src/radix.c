@@ -6,26 +6,27 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 17:20:33 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/05/17 20:07:51 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/20 19:19:02 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
-int is_sorted(t_list *stack)
+bool	is_sorted(t_list *stack)
 {
-	t_list *temp = stack;
-	t_list *temp2 = temp->next;
+	t_list	*temp;
+	t_list	*temp2;
 
+	temp = stack;
+	temp2 = temp->next;
 	while (temp->next != NULL)
 	{
 		if (temp->index > temp2->index)
-			return (0);
-
+			return (false);
 		temp = temp->next;
 		temp2 = temp2->next;
 	}
-	return (1);
+	return (true);
 }
 
 void	radix_sort(t_list **stack_a, t_list **stack_b)

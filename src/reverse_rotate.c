@@ -6,33 +6,26 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/24 15:31:50 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/21 16:55:29 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/20 19:19:20 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
-int	reverserotate(t_list **stack)
+void	reverserotate(t_list **stack)
 {
 	t_list	*top;
 	t_list	*bottom;
 
-	if (ft_lstsize(*stack) < 2)
-		return (-1);
+	if (!*stack || !(*stack)->next)
+		return ;
 	top = *stack;
 	bottom = ft_lstlast(top);
-	while (top)
-	{
-		if (top->next->next == NULL)
-		{
-			top->next = NULL;
-			break ;
-		}
+	while (top->next != bottom)
 		top = top->next;
-	}
+	top->next = NULL;
 	bottom->next = *stack;
 	*stack = bottom;
-	return (0);
 }
 
 // Shift down all elements of stack a by 1.

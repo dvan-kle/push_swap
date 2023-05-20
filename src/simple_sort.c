@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 17:30:11 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/05/17 19:54:45 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/20 19:20:47 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,6 @@ void	simple_sort(t_list **stack_a, t_list **stack_b)
 		sort45(stack_a, stack_b, 1);
 	else if (lstsize == 5)
 		sort45(stack_a, stack_b, 2);
-}
-
-void	sort2(t_list **stack)
-{
-	int	first;
-	int	second;
-
-	if (!(*stack) || !(*stack)->next)
-		return ;
-	first = (*stack)->index;
-	second = (*stack)->next->index;
-	if (first > second)
-		sa(stack);
 }
 
 void	sort3(t_list **stack)
@@ -70,7 +57,6 @@ void	sort3(t_list **stack)
 		ra(stack);
 	}
 }
-
 
 t_list	*find_smallest_index(t_list *stack)
 {
@@ -103,7 +89,7 @@ int	get_node_position(t_list *stack, t_list *node)
 	return (position);
 }
 
-void sort45(t_list **stack_a, t_list **stack_b, int len)
+void	sort45(t_list **stack_a, t_list **stack_b, int len)
 {
 	t_list	*min_index_node;
 	int		position;

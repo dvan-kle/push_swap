@@ -6,54 +6,45 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/21 02:48:19 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/21 16:56:33 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/20 19:20:58 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
 // Swap the first 2 elements at the top of stack a.
-int	swap(t_list **stack)
+void	swap(t_list **stack)
 {
 	t_list	*top;
-	t_list	*next;
-	int		tmp;
+	t_list	*second;
 
-	if (ft_lstsize(*stack) < 2)
-		return (-1);
+	if (!*stack || !(*stack)->next)
+		return ;
 	top = *stack;
-	next = top->next;
-	tmp = top->content;
-	top->content = next->content;
-	next->content = tmp;
-	return (0);
+	second = top->next;
+	top->next = second->next;
+	second->next = top;
+	*stack = second;
 }
 
 // Swap the first 2 elements at the top of stack a.
-int	sa(t_list **stack_a)
+void	sa(t_list **stack_a)
 {
-	if (swap(stack_a) == -1)
-		return (-1);
+	swap(stack_a);
 	ft_putstr_fd("sa\n", 1);
-	return (0);
 }
 
 // Swap the first 2 elements at the top of stack b.
-int	sb(t_list **stack_b)
+void	sb(t_list **stack_b)
 {
-	if (swap(stack_b) == -1)
-		return (-1);
+	swap(stack_b);
 	ft_putstr_fd("sb\n", 1);
-	return (0);
 }
 
 // sa and sb at the same time.
-int	ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b)
 {
-	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
-		return (-1);
 	swap(stack_a);
 	swap(stack_b);
 	ft_putstr_fd("ss\n", 1);
-	return (0);
 }

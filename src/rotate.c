@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/21 02:46:25 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/21 02:48:54 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/20 19:19:42 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	rotate(t_list **stack)
 {
 	t_list	*top;
-	t_list	*bottom;
 
+	if (!*stack || !(*stack)->next)
+		return ;
 	top = *stack;
-	bottom = ft_lstlast(top);
-	top = top->next;
-	bottom->next = top;
+	*stack = top->next;
 	top->next = NULL;
+	ft_lstadd_back(stack, top);
 }
 
 // Shift up all elements of stack a by 1.

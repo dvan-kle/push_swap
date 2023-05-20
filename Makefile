@@ -6,7 +6,7 @@
 #    By: dvan-kle <dvan-kle@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/04/20 22:07:37 by dvan-kle      #+#    #+#                  #
-#    Updated: 2023/05/17 20:03:59 by dvan-kle      ########   odam.nl          #
+#    Updated: 2023/05/20 18:39:27 by dvan-kle      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 
 $(NAME):
 	$(MAKE) all -C libft
-	$(CC) $(CC_FLAGS) $(SRC) $(LIBFT) -g -fsanitize=address -o $(NAME)
+	$(CC) -g -fno-inline $(CC_FLAGS) $(SRC) $(LIBFT) -o $(NAME)
 
 
 clean:
