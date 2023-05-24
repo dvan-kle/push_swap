@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 16:00:52 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/05/20 20:30:53 by danielvankl   ########   odam.nl         */
+/*   Updated: 2023/05/24 13:48:20 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ int	main(int argc, char **argv)
 	check_input(argc, argv);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
+	if (!stack_a || !stack_b)
+		exit(-1);
 	*stack_a = NULL;
 	*stack_b = NULL;
 	stackinit(stack_a, argc, argv);
