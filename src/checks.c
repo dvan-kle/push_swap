@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 16:55:02 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/05/20 19:16:38 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/27 16:31:12 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,18 +83,4 @@ bool	sorted_check(t_list *stack)
 		tmp = tmp->next;
 	}
 	return (true);
-}
-
-void	ft_lstclear(t_list **lst)
-{
-	t_list	*node;
-
-	if (!*lst)
-		return ;
-	while (*lst)
-	{
-		node = (*lst)->next;
-		*lst = node;
-	}
-	*lst = NULL;
 }

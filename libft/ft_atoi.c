@@ -6,15 +6,15 @@
 /*   By: dvan-kle <dvan-kle@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 13:34:48 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2022/10/19 12:51:02 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/05/20 15:57:09 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	int	i;
-	int	minplus;
-	int	result;
+	int			i;
+	int			minplus;
+	long long	result;
 
 	i = 0;
 	minplus = 1;
