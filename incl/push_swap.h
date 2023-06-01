@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/20 21:03:49 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/05/20 19:21:59 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/06/01 01:45:41 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_list
 
 void	error_return(char *str);
 void	check_input(int argc, char **argv);
-void	ft_lstclear(t_list **lst);
+void	ft_free(char **ptr, bool error);
 //List
 void	ft_lstadd_back(t_list **stack, t_list *new);
 t_list	*ft_lstlast(t_list *stack);
@@ -41,8 +41,8 @@ void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
 void	push(t_list **from_stack, t_list **to_stack);
-void	pa(t_list **stack_a, t_list **stack_b);
-void	pb(t_list **stack_b, t_list **stack_a);
+void	pb(t_list **stack_a, t_list **stack_b);
+void	pa(t_list **stack_b, t_list **stack_a);
 void	rotate(t_list **stack);
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);

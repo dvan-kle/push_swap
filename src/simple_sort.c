@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 17:30:11 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/05/20 19:20:47 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/06/01 00:37:25 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,11 +109,11 @@ void	sort45(t_list **stack_a, t_list **stack_b, int len)
 			while ((*stack_a) != min_index_node)
 				rra(stack_a);
 		}
-		pa(stack_a, stack_b);
+		pb(stack_a, stack_b);
 		len--;
 	}
 	sort3(stack_a);
 	sizeb = ft_lstsize(*stack_b);
 	while (sizeb-- > 0)
-		pb(stack_b, stack_a);
+		pa(stack_b, stack_a);
 }

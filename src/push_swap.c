@@ -6,7 +6,7 @@
 /*   By: danielvankleef <danielvankleef@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 16:00:52 by danielvankl   #+#    #+#                 */
-/*   Updated: 2023/05/27 13:39:22 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/06/01 15:42:34 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	assign_indices(t_list *stack)
 
 void	error_return(char *str)
 {
-	ft_putstr_fd(str, 1);
+	ft_putstr_fd(str, 2);
 	exit(EXIT_FAILURE);
 }
 
@@ -75,6 +75,8 @@ void	stackinit(t_list **stack, int argc, char **argv)
 	if (argc == 2)
 	{
 		args = ft_split(argv[1], 32);
+		if (!args)
+			ft_free(args, true);
 		i = 0;
 	}
 	else
@@ -84,11 +86,13 @@ void	stackinit(t_list **stack, int argc, char **argv)
 	}
 	while (args[i])
 	{
-		new_node = ft_lstnew(ft_atoi(args[i]));
-		new_node->index = -1;
+		new_node = ft_lstnew(ft_atoi(args[i++]));
+		if (!new_node)
+			error_return("Error\n");
 		ft_lstadd_back(stack, new_node);
-		i++;
 	}
+	if (argc == 2)
+		ft_free(args, false);
 }
 
 int	main(int argc, char **argv)
@@ -100,7 +104,7 @@ int	main(int argc, char **argv)
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	if (!stack_a || !stack_b)
-		exit(-1);
+		error_return("Error\n");
 	*stack_a = NULL;
 	*stack_b = NULL;
 	stackinit(stack_a, argc, argv);

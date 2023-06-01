@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 17:20:33 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/05/20 19:19:02 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/06/01 00:37:03 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	radix_sort(t_list **stack_a, t_list **stack_b)
 			if (((*stack_a)->index >> i) & 1)
 				ra(stack_a);
 			else
-				pa(stack_a, stack_b);
+				pb(stack_a, stack_b);
 		}
 		while (*stack_b != NULL)
-			pb(stack_b, stack_a);
+			pa(stack_b, stack_a);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 16:55:02 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/05/27 16:31:12 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/06/01 02:36:06 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	check_input(int argc, char **argv)
 	if (argc == 2)
 	{
 		args = ft_split(argv[1], 32);
+		if (!args)
+			ft_free(args, true);
 		i = 0;
 	}
 	else
@@ -61,14 +63,12 @@ void	check_input(int argc, char **argv)
 	while (args[i])
 	{
 		temp = ft_atoi(args[i]);
-		if (temp > INT_MAX || temp < INT_MIN)
+		if (!check_digits(args[i]) || !check_doubles(args, temp, i++)
+			|| (temp > INT_MAX || temp < INT_MIN))
 			error_return("Error\n");
-		if (!check_digits(args[i]))
-			error_return("Error\n");
-		if (!check_doubles(args, temp, i))
-			error_return("Error\n");
-		i++;
 	}
+	if (argc == 2)
+		ft_free(args, false);
 }
 
 bool	sorted_check(t_list *stack)
@@ -83,4 +83,18 @@ bool	sorted_check(t_list *stack)
 		tmp = tmp->next;
 	}
 	return (true);
+}
+
+void	ft_free(char **ptr, bool error)
+{
+	int	i;
+
+	i = 0;
+	while (ptr[i])
+		i++;
+	while (i >= 0)
+		free(ptr[i--]);
+	free(ptr);
+	if (error == true)
+		exit(EXIT_FAILURE);
 }

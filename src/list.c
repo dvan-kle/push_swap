@@ -6,7 +6,7 @@
 /*   By: dvan-kle <dvan-kle@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/21 18:11:04 by dvan-kle      #+#    #+#                 */
-/*   Updated: 2023/04/21 18:16:25 by dvan-kle      ########   odam.nl         */
+/*   Updated: 2023/06/01 16:08:22 by dvan-kle      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (!new)
 		return (NULL);
 	new->content = content;
+	new->index = -1;
 	new->next = NULL;
 	return (new);
 }
