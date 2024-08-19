@@ -14,7 +14,7 @@ To get started with **Push_swap**, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/push_swap.git
+    git clone https://github.com/dvan-kle/push_swap.git
     ```
 
 2. Navigate to the project directory:
